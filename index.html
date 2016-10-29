@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Seasonal Sales</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Seasonal Sales</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-	
-	<article>
-		<section id="products"></section>
-		<section id="categories"></section>
-	</article>
 
-	<script type="text/javascript" src="seasonal-sales.js"></script>
+<div class="container">
+  <div class="row">
+  	<div class="col-lg-8">
+  	  <h2>Seasonal Sales</h2>
+  	</div>
+  	<div class="col-lg-4">
+	  <h2>Discount</h2>
+  	  <select id="seasonal-discount">
+  	    <option>Winter</option>
+  		<option>Autumn</option>
+  		<option>Spring</option>
+  	  </select>
+  	</div>
+  </div>
+</div>
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Department</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Kids Socks</td>
+        <td>Apparel</td>
+        <td>4.99</td>
+      </tr>
+      <tr>
+        <td>Mens Socks</td>
+        <td>Apparel</td>
+        <td>5.99</td>
+      </tr>
+      <tr>
+        <td>Ladies Socks</td>
+        <td>Apparel</td>
+        <td>7.99</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <script type="text/javascript" src="seasonal-sales.js"></script>
+  <script type="text/javascript" src="DOMHandler.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>
 </html>
+
