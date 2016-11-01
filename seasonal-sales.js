@@ -11,10 +11,10 @@ var SeasonalSales = (function() {
 
 			loader.addEventListener("load", function() {
 				_products = JSON.parse(this.responseText).products;
-				callbackFunction(_products);
+				callbackFunction(_products, 1);
 			});
 		},
-		loadCategories: function(callbackFunction) {
+		loadCategories: function() {
 			var loader = new XMLHttpRequest();
 
 			loader.open("GET", "categories.json");
@@ -22,7 +22,6 @@ var SeasonalSales = (function() {
 
 			loader.addEventListener("load", function() {
 				_categories = JSON.parse(this.responseText).categories;
-				callbackFunction(_categories);
 			});
 		},
 		getProducts: function() {

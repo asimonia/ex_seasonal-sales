@@ -1,14 +1,28 @@
-function showCategories(category) {
+/* DOM ELEMENTS */
+var seasonal = document.getElementById("seasonal-discount");
 
-}
+seasonal.addEventListener("change", function(e) {
+	switch(e.target.value) {
+		case "Winter":
+			showProducts(SeasonalSales.getProducts(), 1);
+			break;
+		case "Autumn":
+			showProducts(SeasonalSales.getProducts(), 2);
+			break;
+		case "Spring":
+			showProducts(SeasonalSales.getProducts(), 3);
+			break;
+	}
+});
 
-function showProducts(products) {
+
+function showProducts(products, season) {
 	var list = document.getElementById("products");
 	var outputString = "";
 
 	for (var i = 0; i < products.length; i++) {
 		var currentProduct = products[i];
-		var discountedPercent = (1 - SeasonalSales.getDiscount(currentProduct.category_id));
+		var discountedPercent = (1 - SeasonalSales.getDiscount(season));
 		var discountedPrice = currentProduct.price * discountedPercent;
 		discountedPrice = discountedPrice.toFixed(2);
 
@@ -27,6 +41,7 @@ function showProducts(products) {
 
 
 /* CALL IIFEs  */
+SeasonalSales.loadCategories();
 SeasonalSales.loadProducts(showProducts);
-SeasonalSales.loadCategories(showCategories);
+
 
