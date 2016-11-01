@@ -33,6 +33,12 @@ var SeasonalSales = (function() {
 		},
 		getDiscount: function(category) {
 			return _categories[category - 1].discount;
+		},
+		getSeason: function(category) {
+			return _categories[category - 1].season_discount;
+		},
+		getDepartment: function(category) {
+			return _categories[category - 1].name;
 		}
 	};
 })();
